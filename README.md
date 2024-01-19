@@ -1,5 +1,5 @@
 # QuickQuest
-# *Overview:*
+### *Overview:*
 
 *The application is envisioned as a platform for users to discover and engage with various offers and services applicable to their daily lives. Companies from diverse sectors such as security, home-service, carservice, workshops, dentistry, health, sports, beauty, and more, can utilize the platform to connect with potential customers.*
 
