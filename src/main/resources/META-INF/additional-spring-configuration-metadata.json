@@ -1,0 +1,24 @@
+{
+  "properties": [
+    {
+      "name": "spring.security.enabled",
+      "type": "java.lang.String",
+      "description": "Description for spring.security.enabled."
+    },
+    {
+      "name": "management.endpoints.web.exposure.include",
+      "type": "java.lang.String",
+      "description": "Description for management.endpoints.web.exposure.include."
+    },
+    {
+      "name": "spring.security.csrf.ignore",
+      "type": "java.lang.String",
+      "description": "Description for spring.security.csrf.ignore."
+    },
+    {
+      "name": "spring.h2.console.csrf.enabled",
+      "type": "java.lang.String",
+      "description": "Description for spring.h2.console.csrf.enabled."
+    }
+  ]
+}
