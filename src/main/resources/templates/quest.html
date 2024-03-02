@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="layout :: content">
+<body>
+
+<h1>Quests</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Details</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="quest : ${quests}">
+        <td th:text="${quest.id}"></td>
+        <td th:text="${quest.details}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

@@ -1,1 +1,24 @@
-hello
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Quest</title>
+</head>
+<body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(function() {
+        $.get('/menu', function(data) {
+            $('header').append(data);
+        });
+    });
+</script>
+
+<main>
+//content
+</main>
+
+</body>
+</html>
