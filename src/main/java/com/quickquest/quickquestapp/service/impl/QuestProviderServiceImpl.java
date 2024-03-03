@@ -1,19 +1,18 @@
-package com.quickquest.quickquestapp.service;
+package com.quickquest.quickquestapp.service.impl;
 
 import com.quickquest.quickquestapp.model.QuestProvider;
 import com.quickquest.quickquestapp.repository.QuestProviderRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.quickquest.quickquestapp.service.QuesterProviderService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class QuestProviderService {
+public class QuestProviderServiceImpl implements QuesterProviderService {
     private final QuestProviderRepository questProviderRepository;
 
-    @Autowired
-    public QuestProviderService(QuestProviderRepository questProviderRepository) {
+    public QuestProviderServiceImpl(QuestProviderRepository questProviderRepository) {
         this.questProviderRepository = questProviderRepository;
     }
 

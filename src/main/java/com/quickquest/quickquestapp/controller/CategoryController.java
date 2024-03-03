@@ -1,7 +1,7 @@
 package com.quickquest.quickquestapp.controller;
 
 import com.quickquest.quickquestapp.model.Category;
-import com.quickquest.quickquestapp.service.CategoryService;
+import com.quickquest.quickquestapp.service.impl.CategoryServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,16 +14,15 @@ import java.util.List;
 @RequestMapping("/categories")
 public class CategoryController {
 
-    private final CategoryService categoryService;
+    private final CategoryServiceImpl categoryServiceImpl;
 
-    @Autowired
-    public CategoryController(CategoryService categoryService) {
-        this.categoryService = categoryService;
+    public CategoryController(CategoryServiceImpl categoryServiceImpl) {
+        this.categoryServiceImpl = categoryServiceImpl;
     }
 
     @GetMapping("/list")
     public String getAllCategories(Model model) {
-        List<Category> categories = categoryService.getAllCategories();
+        List<Category> categories = categoryServiceImpl.getAllCategories();
         model.addAttribute("categories", categories);
         return "categories";
     }

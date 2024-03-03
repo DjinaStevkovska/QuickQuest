@@ -20,12 +20,12 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'com.h2database:h2'
+    runtimeOnly 'org.postgresql:postgresql' // PostgreSQL JDBC driver
     implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.2.RELEASE'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
-//    runtimeOnly 'com.h2database:h2' // not used during the compilation(impl) process, but they necessary for the application to run properly.
+    implementation 'org.projectlombok:lombok:1.18.24'
 //    runtimeOnly 'org.springframework.boot:spring-boot-starter-actuator'
 }
 

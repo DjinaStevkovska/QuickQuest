@@ -1,7 +1,7 @@
 package com.quickquest.quickquestapp.controller;
 
 import com.quickquest.quickquestapp.model.QuestProvider;
-import com.quickquest.quickquestapp.service.QuestProviderService;
+import com.quickquest.quickquestapp.service.impl.QuestProviderServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,16 +14,15 @@ import java.util.List;
 @RequestMapping("/quest-providers")
 public class QuestProviderController {
 
-    private final QuestProviderService questProviderService;
+    private final QuestProviderServiceImpl questProviderServiceImpl;
 
-    @Autowired
-    public QuestProviderController(QuestProviderService questProviderService) {
-        this.questProviderService = questProviderService;
+    public QuestProviderController(QuestProviderServiceImpl questProviderServiceImpl) {
+        this.questProviderServiceImpl = questProviderServiceImpl;
     }
 
     @GetMapping("/list")
     public String getAllQuestProviders(Model model) {
-        List<QuestProvider> questProviders = questProviderService.getAllQuestProviders();
+        List<QuestProvider> questProviders = questProviderServiceImpl.getAllQuestProviders();
         model.addAttribute("questProviders", questProviders);
         return "quest-providers";
     }

@@ -1,8 +1,7 @@
 package com.quickquest.quickquestapp.api;
 
 import com.quickquest.quickquestapp.model.QuestProvider;
-import com.quickquest.quickquestapp.service.QuestProviderService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.quickquest.quickquestapp.service.impl.QuestProviderServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,31 +9,30 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/quest-providers")
 public class QuestProviderApiAction {
-    private final QuestProviderService questProviderService;
+    private final QuestProviderServiceImpl questProviderServiceImpl;
 
-    @Autowired
-    public QuestProviderApiAction(QuestProviderService questProviderService) {
-        this.questProviderService = questProviderService;
+    public QuestProviderApiAction(QuestProviderServiceImpl questProviderServiceImpl) {
+        this.questProviderServiceImpl = questProviderServiceImpl;
     }
 
     @GetMapping
     public List<QuestProvider> getAllQuestProviders() {
-        return questProviderService.getAllQuestProviders();
+        return questProviderServiceImpl.getAllQuestProviders();
     }
 
     @GetMapping("/{id}")
     public QuestProvider getQuestProviderById(@PathVariable Long id) {
-        return questProviderService.getQuestProviderById(id)
+        return questProviderServiceImpl.getQuestProviderById(id)
                 .orElseThrow(() -> new RuntimeException("Quest Provider not found"));
     }
 
     @PostMapping
     public QuestProvider saveQuestProvider(@RequestBody QuestProvider questProvider) {
-        return questProviderService.saveQuestProvider(questProvider);
+        return questProviderServiceImpl.saveQuestProvider(questProvider);
     }
 
     @DeleteMapping("/{id}")
     public void deleteQuestProviderById(@PathVariable Long id) {
-        questProviderService.deleteQuestProviderById(id);
+        questProviderServiceImpl.deleteQuestProviderById(id);
     }
 }
