@@ -2,7 +2,6 @@ package com.quickquest.quickquestapp.api;
 
 import com.quickquest.quickquestapp.model.Category;
 import com.quickquest.quickquestapp.service.impl.CategoryServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,7 +11,6 @@ import java.util.List;
 public class CategoryApiAction {
     private final CategoryServiceImpl categoryServiceImpl;
 
-    @Autowired
     public CategoryApiAction(CategoryServiceImpl categoryServiceImpl) {
         this.categoryServiceImpl = categoryServiceImpl;
     }

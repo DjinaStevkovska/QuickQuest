@@ -16,7 +16,6 @@ public class QuestProviderController {
 
     private final QuestProviderServiceImpl questProviderServiceImpl;
 
-    @Autowired
     public QuestProviderController(QuestProviderServiceImpl questProviderServiceImpl) {
         this.questProviderServiceImpl = questProviderServiceImpl;
     }

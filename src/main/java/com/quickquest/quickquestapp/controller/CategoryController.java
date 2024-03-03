@@ -16,7 +16,6 @@ public class CategoryController {
 
     private final CategoryServiceImpl categoryServiceImpl;
 
-    @Autowired
     public CategoryController(CategoryServiceImpl categoryServiceImpl) {
         this.categoryServiceImpl = categoryServiceImpl;
     }

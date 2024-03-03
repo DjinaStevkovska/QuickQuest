@@ -16,7 +16,7 @@ public class QuesterController {
 
     private final QuesterServiceImpl questerServiceImpl;
 
-    @Autowired
+
     public QuesterController(QuesterServiceImpl questerServiceImpl) {
         this.questerServiceImpl = questerServiceImpl;
     }

@@ -16,7 +16,7 @@ public class ProviderController {
 
     private final ProviderServiceImpl providerServiceImpl;
 
-    @Autowired
+
     public ProviderController(ProviderServiceImpl providerServiceImpl) {
         this.providerServiceImpl = providerServiceImpl;
     }

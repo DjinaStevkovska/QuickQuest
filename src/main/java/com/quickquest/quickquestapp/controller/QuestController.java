@@ -16,7 +16,6 @@ public class QuestController {
 
     private final QuestServiceImpl questServiceImpl;
 
-    @Autowired
     public QuestController(QuestServiceImpl questServiceImpl) {
         this.questServiceImpl = questServiceImpl;
     }

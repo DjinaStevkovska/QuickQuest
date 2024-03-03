@@ -2,7 +2,6 @@ package com.quickquest.quickquestapp.api;
 
 import com.quickquest.quickquestapp.model.Provider;
 import com.quickquest.quickquestapp.service.impl.ProviderServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,7 +11,6 @@ import java.util.List;
 public class ProviderApiAction {
     private final ProviderServiceImpl providerServiceImpl;
 
-    @Autowired
     public ProviderApiAction(ProviderServiceImpl providerServiceImpl) {
         this.providerServiceImpl = providerServiceImpl;
     }

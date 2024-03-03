@@ -2,7 +2,6 @@ package com.quickquest.quickquestapp.api;
 
 import com.quickquest.quickquestapp.model.Quest;
 import com.quickquest.quickquestapp.service.impl.QuestServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,7 +11,6 @@ import java.util.List;
 public class QuestApiAction {
     private final QuestServiceImpl questServiceImpl;
 
-    @Autowired
     public QuestApiAction(QuestServiceImpl questServiceImpl) {
         this.questServiceImpl = questServiceImpl;
     }
