@@ -1,7 +1,7 @@
 package com.quickquest.quickquestapp.controller;
 
 import com.quickquest.quickquestapp.model.Provider;
-import com.quickquest.quickquestapp.service.ProviderService;
+import com.quickquest.quickquestapp.service.impl.ProviderServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,16 +14,16 @@ import java.util.List;
 @RequestMapping("/providers")
 public class ProviderController {
 
-    private final ProviderService providerService;
+    private final ProviderServiceImpl providerServiceImpl;
 
     @Autowired
-    public ProviderController(ProviderService providerService) {
-        this.providerService = providerService;
+    public ProviderController(ProviderServiceImpl providerServiceImpl) {
+        this.providerServiceImpl = providerServiceImpl;
     }
 
     @GetMapping("/list")
     public String getAllProviders(Model model) {
-        List<Provider> providers = providerService.getAllProviders();
+        List<Provider> providers = providerServiceImpl.getAllProviders();
         model.addAttribute("providers", providers);
         return "providers";
     }

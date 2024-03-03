@@ -1,7 +1,7 @@
 package com.quickquest.quickquestapp.controller;
 
 import com.quickquest.quickquestapp.model.Quester;
-import com.quickquest.quickquestapp.service.QuesterService;
+import com.quickquest.quickquestapp.service.impl.QuesterServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,16 +14,16 @@ import java.util.List;
 @RequestMapping("/questers")
 public class QuesterController {
 
-    private final QuesterService questerService;
+    private final QuesterServiceImpl questerServiceImpl;
 
     @Autowired
-    public QuesterController(QuesterService questerService) {
-        this.questerService = questerService;
+    public QuesterController(QuesterServiceImpl questerServiceImpl) {
+        this.questerServiceImpl = questerServiceImpl;
     }
 
     @GetMapping("/list")
     public String getAllQuesters(Model model) {
-        List<Quester> questers = questerService.getAllQuesters();
+        List<Quester> questers = questerServiceImpl.getAllQuesters();
         model.addAttribute("questers", questers);
         return "questers";
     }
